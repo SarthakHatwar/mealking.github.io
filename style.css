@@ -1,0 +1,140 @@
+  @import url('https://fonts.googleapis.com/css2?family=Lexend+Peta:wght@900&display=swap');
+
+#headerr{
+    margin-top: 4vh;
+ text-align: center;
+ font-weight: 900;
+ font-family: 'Lexend Peta', sans-serif;
+}
+/* title */
+#headerr:hover{
+    color: brown;
+   
+}
+#link{
+    text-decoration: none;
+
+    color: white;
+}
+body{
+    background-image: url(background.jpg);
+    background-size: cover;
+    background-position:initial;
+}
+/* search */
+#input_div{
+    display: flex;
+    justify-content: center;
+}
+.meal_input{
+   width: 40vw;
+   height: 7vh;
+   background: transparent;
+   border: none;
+   border-bottom:white 2px solid ;
+   color: white;
+   font-size: 3vh;
+}
+.search{
+    background: transparent;
+    border: none;
+    border-bottom:white 2px solid ;
+    background-image: url(search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+
+    width: 3vw;
+}
+.search:active{
+    background-color: white;
+}
+#error-In-Input{
+    font-size: 15px;
+    color: red;
+    width: max-content;
+}
+#fav{
+    color: white;
+    margin-left: 1vw;
+}
+
+
+/* lists */
+ul{
+list-style-type: none
+}
+#div_list{
+    display: flex;
+}
+.list{
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.meal-item{
+    margin: 20px;
+    width: 18vw;
+    height: 50vh;
+    background-color: white;
+    box-shadow: 2px 2px 2px 2px black;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-radius: 10px;
+}
+.meal-name{
+    background-color: white;
+}
+
+
+.meal-item::-webkit-scrollbar{
+    display: none;
+}
+.meal-name h3{
+    color: brown;
+    background-color: white;
+    overflow-y: hidden;
+}
+img{
+    height: 30vh;
+    width: 18vw;
+    border-radius: 5px;
+    background-color: white;
+}
+
+.meal-name p{
+    background-color: white;
+    margin-top: 0px;
+    color: gray;
+}
+.meal-name .add{
+    width: 100%;
+
+    color: white;
+    font-family: sans-serif;
+    background-color: white;
+    padding: 2px;
+    border-width: 0ch;
+    height: 30px;
+} 
+.meal-name .delete{
+
+    width: 100%;
+    background-color: white;
+}
+/* fav */
+#div-list div{
+    padding: 0%;
+    border-radius: 5px;
+
+}
+#fav-list{
+    color: white;
+
+}
+#like{
+    color: black;
+    height: 20px;
+    width: 20px;
+}
