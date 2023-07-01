@@ -194,4 +194,7 @@ img{
         justify-content: center;
         width: 100%;
     }
+   #fav{
+        margin-top: 0px;
+    }
 }
