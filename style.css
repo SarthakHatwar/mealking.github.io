@@ -71,21 +71,21 @@ list-style-type: none
     width: 75%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
 }
-.meal-item{
+.meal-item {
     margin: 20px;
     width: 18vw;
     height: 50vh;
-    background-color: white;
+    background-color: black;
+    /* opacity: 30%; */
     box-shadow: 2px 2px 2px 2px black;
     overflow-x: hidden;
     overflow-y: auto;
     border-radius: 10px;
 }
 .meal-name{
-    background-color: white;
-}
+    background-color: black;}
 
 
 .meal-item::-webkit-scrollbar{
@@ -93,7 +93,7 @@ list-style-type: none
 }
 .meal-name h3{
     color: brown;
-    background-color: white;
+    background-color: black;
     overflow-y: hidden;
 }
 img{
@@ -104,37 +104,57 @@ img{
 }
 
 .meal-name p{
-    background-color: white;
+    background-color: black;
     margin-top: 0px;
-    color: gray;
+    padding: 4px;
+
+    color: white;
 }
 .meal-name .add{
     width: 100%;
-
     color: white;
     font-family: sans-serif;
-    background-color: white;
+    background-color: black;
     padding: 2px;
     border-width: 0ch;
     height: 30px;
 } 
-.meal-name .delete{
 
-    width: 100%;
-    background-color: white;
-}
 /* fav */
 #div-list div{
     padding: 0%;
     border-radius: 5px;
 
 }
+.meal-name .delete{
+
+    width: 100%;
+    background-color: black;
+    border: none;
+}
 #fav-list{
     color: white;
 
 }
 #like{
-    color: black;
+    color: white;
     height: 20px;
     width: 20px;
+}
+#like:active{
+    color: red;
+}
+
+
+/* responsive */
+@media screen and (max-width: 1000px) {
+    .meal-item{
+        width: 50vw;
+    }
+    img{
+        width: 50vw;
+    }
+    #div_list{
+        display: block;
+    }
 }
