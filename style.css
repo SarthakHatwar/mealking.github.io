@@ -54,10 +54,34 @@ body{
     color: red;
     width: max-content;
 }
-#fav{
-    color: white;
-    margin-left: 1vw;
+#autocomolete{
+   display: flex;
+   justify-content: center;
+   width: 40%;
+   margin-left: 24vw;
+   margin-top: -2vh;
+   height: 30vh;
+   overflow: scroll;
 }
+#autocomolete::-webkit-scrollbar{
+    display: none;
+}
+
+#autocomplete-dropdown{
+    color: white;
+    align-items: center;
+    width: 80%;
+
+    
+ 
+}
+#autocomplete-dropdown li{
+    border: solid white 1px;
+    font-size: 22px;
+    
+}
+
+#aut
 
 
 /* lists */
@@ -72,6 +96,7 @@ list-style-type: none
     display: flex;
     flex-wrap: wrap;
     justify-content: start;
+    margin-top: -22vh;
 }
 .meal-item {
     margin: 10px;
@@ -121,6 +146,12 @@ img{
 } 
 
 /* fav */
+#fav{
+    color: white;
+    margin-left: 1vw;
+    margin-top: -22vh;
+}
+
 #div-list div{
     padding: 0%;
     border-radius: 5px;
