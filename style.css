@@ -157,4 +157,8 @@ img{
     #div_list{
         display: block;
     }
+  .list{
+        justify-content: center;
+        width: 100%;
+    }
 }
