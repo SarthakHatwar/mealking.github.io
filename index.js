@@ -56,6 +56,12 @@ function addToList(mealId) {
     .then(res => res.json())
     .then(data => {
       let meal = data.meals[0];
+      
+      // Check if meal already exists in the list
+      if (document.getElementById(meal.idMeal) !== null) {
+        return;
+      }
+      
       let html = `
         <li class="list-item" id="${meal.idMeal}">
           <div class="meal-item" data-id="${meal.idMeal}">
@@ -65,13 +71,14 @@ function addToList(mealId) {
             <div class="meal-name" id="back">
               <h3>${meal.strMeal}</h3>
               <button class="delete" onclick="removeItem('${meal.idMeal}')">
-              <ion-icon id="like" name="trash-outline"></ion-icon> 
-            </button>
+                <ion-icon id="like" name="trash-outline"></ion-icon> 
+              </button>
               <p id="inst">${meal.strInstructions}</p>
             </div>
           </div>
         </li>
       `;
+      
       favList.innerHTML += html;
     });
 }
