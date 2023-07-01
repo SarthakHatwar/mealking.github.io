@@ -4,12 +4,14 @@ let mealList = document.querySelector('#list');
 let errorTxt = document.querySelector('#error-In-Input');
 let submit = document.querySelector('.search');
 let favList = document.querySelector('.fav-list');
+let autocompleteDropdown = document.querySelector('#autocomplete-dropdown');
 
 // Autocomplete function
 input.addEventListener('input', function() {
   let searchInputTxt = input.value.trim();
   if (searchInputTxt.length === 0) {
     errorTxt.innerHTML = '';
+    clearAutocompleteDropdown();
     return;
   }
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputTxt}`)
@@ -20,41 +22,44 @@ input.addEventListener('input', function() {
         showAutocompleteOptions(autocompleteList);
       } else {
         errorTxt.innerHTML = "No autocomplete options available.";
+        clearAutocompleteDropdown();
       }
     });
 });
 
-// Function to show autocomplete options
 function showAutocompleteOptions(options) {
-  let autocompleteDropdown = document.querySelector('#autocomplete-dropdown');
   let html = '';
   options.forEach(option => {
     html += `<li class="autocomplete-option">${option}</li>`;
   });
   autocompleteDropdown.innerHTML = html;
 
-  // Add click event listener to autocomplete options
   let autocompleteOptions = document.querySelectorAll('.autocomplete-option');
   autocompleteOptions.forEach(option => {
     option.addEventListener('click', function() {
       input.value = option.innerText;
-      autocompleteDropdown.innerHTML = '';
+      clearAutocompleteDropdown();
     });
   });
 }
 
-// Function to Search on click
+function clearAutocompleteDropdown() {
+  autocompleteDropdown.innerHTML = '';
+}
 
+// search on click
 submit.addEventListener('click', function () {
   if (input.value.length === 0) {
-    errorTxt.innerHTML = "Input Can Not Be Empty";
+    errorTxt.innerHTML = "Input Cannot Be Empty";
     mealList.innerHTML = '';
     return;
   }
+  errorTxt.innerHTML = "";
+  clearAutocompleteDropdown();
   getMealList();
 });
 
-// Function to Get meal list
+// Getting meal list
 function getMealList() {
   let searchInputTxt = input.value.trim();
   fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInputTxt}`)
@@ -90,14 +95,13 @@ function getMealList() {
     });
 }
 
-// Function to Add meal to favorites list
+// Add meal to favorites list
 function addToList(mealId) {
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)
     .then(res => res.json())
     .then(data => {
       let meal = data.meals[0];
       
-      // Check if meal already exists in the list
       if (document.getElementById(meal.idMeal) !== null) {
         return;
       }
@@ -123,13 +127,8 @@ function addToList(mealId) {
     });
 }
 
-
-
-// Function to Remove meal from favorites list
+// Remove meal from favorites list
 function removeItem(mealId) {
   let delList = document.getElementById(`${mealId}`);
   favList.removeChild(delList);
 }
-
-
-
