@@ -74,8 +74,8 @@ list-style-type: none
     justify-content: start;
 }
 .meal-item {
-    margin: 20px;
-    width: 18vw;
+    margin: 10px;
+    width: 22vw;
     height: 50vh;
     background-color: black;
     /* opacity: 30%; */
@@ -98,7 +98,7 @@ list-style-type: none
 }
 img{
     height: 30vh;
-    width: 18vw;
+    width: 22vw;
     border-radius: 5px;
     background-color: white;
 }
@@ -157,7 +157,7 @@ img{
     #div_list{
         display: block;
     }
-  .list{
+    .list{
         justify-content: center;
         width: 100%;
     }
